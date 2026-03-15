@@ -1,5 +1,7 @@
 # Entregável 1 — Definição da Persona
 
+![Minha persona](persona.png)
+
 ## Persona principal
 
 **Mateus tem 17 anos**, estuda no ensino médio e gosta de jogos com história, exploração e mistério. Ele curte experiências que passem uma sensação de descoberta, principalmente jogos com visual retrô, mapas simples de explorar e personagens estranhos ou memoráveis. Costuma jogar no computador à noite ou nos fins de semana, quando quer mergulhar em algum universo por alguns minutos ou algumas horas.
