@@ -1,164 +1,266 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Castelo do Eco Sombrio</title>
-        <link rel="stylesheet" href="style.css" />
-        <link rel="icon" type="image/png" href="icon.png">
-    </head>
-    <body>
-        <header class="hero">
-            <div class="overlay"></div>
-            <div class="container hero-content">
-                <div class="hero-text">
-                    <span class="tag">Jogo indie • RPG Maker • Mistério
-                        sombrio</span>
-                    <h1>Castelo do Eco Sombrio</h1>
-                    <p>
-                        Um garoto segue uma luz misteriosa na floresta e
-                        desperta em um castelo
-                        antigo, tomado por monstros, memórias e segredos que
-                        parecem conhecer sua dor.
-                    </p>
 
-                    <div class="hero-buttons">
-                        <a href="#sobre" class="btn primary">Conhecer o jogo</a>
-                        <a href="#destaques" class="btn secondary">Ver
-                            destaques</a>
-                    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corredor dos Sonhos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Press+Start+2P&display=swap"
+    rel="stylesheet" />
 
-                    <div class="hero-cards">
-                        <div class="mini-card">
-                            <h3>01</h3>
-                            <p>Narrativa misteriosa</p>
-                        </div>
-                        <div class="mini-card">
-                            <h3>02</h3>
-                            <p>Exploração de castelo</p>
-                        </div>
-                        <div class="mini-card">
-                            <h3>03</h3>
-                            <p>Pixel art sombria</p>
-                        </div>
-                    </div>
-                </div>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
 
-                <div class="hero-image">
-                    <div class="image-card">
-                        <img src="./personagem.png" alt="Persona do jogador" />
-                        <div class="image-caption">
-                            <span>Premissa</span>
-                            <p>
-                                Você entrou no castelo. Agora ele não vai te
-                                soltar sem antes
-                                mostrar tudo o que você tentou esquecer.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+</head>
 
-        <section id="sobre" class="section">
-            <div class="container about">
-                <div class="about-main">
-                    <span class="section-tag">Sobre o jogo</span>
-                    <h2>Uma jornada sobre medo, memória e descoberta</h2>
-                    <p>
-                        Noah, um menino de 13 anos, desaparece após seguir uma
-                        luz estranha em
-                        uma noite de tempestade. Ao despertar em um castelo
-                        antigo cheio de
-                        criaturas monstruosas, ele percebe que cada corredor
-                        parece reagir às
-                        suas memórias, culpas e perdas. Para sair, será preciso
-                        explorar,
-                        sobreviver e encarar a verdade.
-                    </p>
-                </div>
+<body>
 
-                <div class="about-side">
-                    <span class="section-tag">Para quem é</span>
-                    <h3>Jogadores que amam mistério</h3>
-                    <p>
-                        Ideal para quem gosta de explorar cenários, juntar
-                        pistas, criar teorias
-                        e mergulhar em histórias com clima sombrio e emocional.
-                    </p>
-                </div>
-            </div>
-        </section>
+  <div id="intro">
+    <p class="intro-line">você está dormindo...</p>
+    <p class="intro-line amber">mas o castelo está acordado.</p>
+    <p class="intro-line red">ele te conhece.</p>
+    <p class="intro-line">ele lembra de tudo que você tentou esquecer.</p>
+    <p class="intro-title">Corredor dos Sonhos</p>
+    <button class="intro-skip" id="skip-btn">PULAR ▶</button>
+  </div>
 
-        <section id="destaques" class="section dark">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">Destaques</span>
-                    <h2>O que torna esse jogo especial</h2>
-                </div>
+  <nav>
+    <div class="nav-container">
 
-                <div class="features">
-                    <div class="feature-card">
-                        <h3>Exploração significativa</h3>
-                        <p>
-                            Cada sala do castelo pode esconder pistas, objetos e
-                            fragmentos da narrativa.
-                        </p>
-                    </div>
+      <a href="#" class="nav-logo">CORREDOR DOS SONHOS</a>
 
-                    <div class="feature-card">
-                        <h3>Tensão acessível</h3>
-                        <p>
-                            Clima sombrio e ameaçador sem depender de
-                            dificuldade injusta ou punição exagerada.
-                        </p>
-                    </div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-                    <div class="feature-card">
-                        <h3>Narrativa ambiental</h3>
-                        <p>
-                            Bilhetes, ruínas, símbolos e monstros ajudam a
-                            contar a história sem revelar tudo de uma vez.
-                        </p>
-                    </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#historia">História</a></li>
+        <li><a href="#alas">O Castelo</a></li>
+        <li><a href="#destaques">Destaques</a></li>
+        <li class="nav-highlight"><a href="#jogar">Jogar Agora</a></li>
+      </ul>
 
-                    <div class="feature-card">
-                        <h3>Estilo RPG Maker</h3>
-                        <p>
-                            Uma proposta inspirada em jogos indie retrô, com
-                            foco em atmosfera, exploração e descoberta.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    </div>
+  </nav>
 
-        <section class="section gallery-section">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">Atmosfera</span>
-                    <h2>O clima que define a experiência</h2>
-                </div>
+  <section class="hero">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
 
-                <div class="gallery">
-                    <div class="gallery-box">Corredores antigos</div>
-                    <div class="gallery-box">Monstros misteriosos</div>
-                    <div class="gallery-box">Salas esquecidas</div>
-                    <div class="gallery-box">Bilhetes e pistas</div>
-                </div>
-            </div>
-        </section>
+    <div class="hero-content">
+      <p class="hero-eyebrow">RPG indie · pixel art · terror leve</p>
+      <h1 class="hero-title">Corredor<br><span>dos Sonhos</span></h1>
+      <p class="hero-tagline">"Você <span class="zigzag">adormeceu</span>. O castelo <span class="zigzag">acordou</span>
+        antes de você."</p>
+      <div class="hero-buttons">
+        <a class="btn-play" href="#jogar">▶ ENTRAR NO CASTELO</a>
+        <a class="btn-outline" href="#historia">DESCOBRIR A HISTÓRIA</a>
+      </div>
+    </div>
 
-        <section class="section cta">
-            <div class="container cta-box">
-                <span class="section-tag">Entre no castelo</span>
-                <h2>Descubra o que está escondido no Eco Sombrio</h2>
-                <p>
-                    Explore, enfrente criaturas e monte sua própria
-                    interpretação dessa história.
-                </p>
-                <a href="#" class="btn primary">Acompanhar o projeto</a>
-            </div>
-        </section>
-    </body>
+    <div class="hero-scroll">
+      <span>DESCER</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+  <div class="section-rune">· · ✦ · ·</div>
+
+  <section id="historia" class="cinematic"
+    style="background: radial-gradient(ellipse 80% 60% at 20% 50%, rgba(59,31,78,0.4) 0%, transparent 60%), var(--black);">
+    <div class="cinematic-body reveal">
+      <div class="section-label">A história</div>
+      <h2>Kael adormeceu com o celular na mão.<br><em>O castelo não o deixou acordar.</em></h2>
+      <p>
+        No centro de um castelo que parece <span class="zigzag">vivo</span>, cada corredor guarda uma <span
+          class="zigzag">memória</span> que ele preferiu esquecer.
+        As criaturas não são monstros — são fragmentos de algo mais antigo e mais <span class="zigzag">pessoal</span>.
+        Para encontrar a saída, você precisará primeiro entender por que chegou aqui.
+      </p>
+    </div>
+  </section>
+
+  <div class="quote-section">
+    <blockquote>
+      "Quero sentir que entrei em um lugar estranho e que preciso descobrir o que aconteceu ali."
+    </blockquote>
+    <cite>— Mateus, 17 anos · jogador</cite>
+  </div>
+
+  <section id="jogar">
+    <div class="play-header reveal">
+      <p class="section-label" style="justify-content:center;">Jogar agora</p>
+      <h2>Entre no corredor</h2>
+      <p>O castelo está esperando. Você não precisa de instalação — só de <span class="zigzag">coragem</span>.</p>
+    </div>
+
+    <div class="iframe-wrapper reveal reveal-delay-1">
+      <div class="iframe-topbar">
+        <div class="iframe-dot red"></div>
+        <div class="iframe-dot amber"></div>
+        <div class="iframe-dot green"></div>
+        <div class="iframe-url">corredor-dos-sonhos.itch.io</div>
+      </div>
+
+      <iframe class="game-iframe" id="game-iframe" src="about:blank"
+        data-src="https://itch.io/embed-upload/SEU-JOGO-AQUI?color=0d0d0d" allowfullscreen
+        title="Corredor dos Sonhos — Jogar no navegador"></iframe>
+
+      <div class="iframe-overlay" id="iframe-overlay">
+        <div class="play-icon" id="play-btn">
+          <svg viewBox="0 0 24 24">
+            <polygon points="5,3 19,12 5,21" />
+          </svg>
+        </div>
+        <p class="play-label">INICIAR O JOGO</p>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="alas">
+    <div class="section-header reveal">
+      <p class="section-label" style="justify-content:center; margin-bottom:1rem;">O castelo</p>
+      <h2>Quatro alas. Quatro medos.<br>Nenhuma saída fácil.</h2>
+      <p>Cada ala é um fragmento do subconsciente de Kael — com sua própria atmosfera, criatura e segredo.</p>
+    </div>
+
+    <div class="alas-grid">
+      <div class="ala-card ala-1 reveal">
+        <div class="ala-bg"></div>
+        <div class="ala-content">
+          <p class="ala-num">ALA 01 ·</p>
+          <h3>Ala das Velas</h3>
+          <p class="ala-theme">Memória da infância · Paleta âmbar e quente</p>
+          <p>Nostálgica e perturbadora. A <span class="zigzag">Sombra</span> que vive aqui imita a silhueta de Kael com
+            precisão assustadora.</p>
+        </div>
+      </div>
+
+      <div class="ala-card ala-2 reveal reveal-delay-1">
+        <div class="ala-bg"></div>
+        <div class="ala-content">
+          <p class="ala-num">ALA 02 ·</p>
+          <h3>Ala Alagada</h3>
+          <p class="ala-theme">Ansiedade e pressão · Azul escuro e ecos</p>
+          <p>Água no chão. Ecos distantes. A criatura aqui persegue pelo <span class="zigzag">som</span> — cada passo
+            conta.</p>
+        </div>
+      </div>
+
+      <div class="ala-card ala-3 reveal reveal-delay-2">
+        <div class="ala-bg"></div>
+        <div class="ala-content">
+          <p class="ala-num">ALA 03 ·</p>
+          <h3>Ala da Biblioteca</h3>
+          <p class="ala-theme">Segredos enterrados · Verde acinzentado e névoa</p>
+          <p>Livros espalhados. A Figura que patrulha é sensível à <span class="zigzag">luz</span> — apague as velas
+            antes de avançar.</p>
+        </div>
+      </div>
+
+      <div class="ala-card ala-4 reveal reveal-delay-3">
+        <div class="ala-bg"></div>
+        <div class="ala-content">
+          <p class="ala-num">ALA 04 ·</p>
+          <h3>Torre do Eco</h3>
+          <p class="ala-theme">Núcleo do pesadelo · Vermelho escuro e silêncio</p>
+          <p>O <span class="zigzag">Reflexo</span> espera aqui. É uma cópia distorcida de Kael — e ele sabe de coisas
+            que você preferiu esquecer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="destaques">
+    <div class="section-header reveal">
+      <p class="section-label" style="justify-content:center; margin-bottom:1rem;">Por que jogar</p>
+      <h2>Feito para quem explora cada canto</h2>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <span class="feature-icon">◈</span>
+        <h3>Narrativa ambiental</h3>
+        <p>Bilhetes, pinturas e sussurros contam a história sem cortar o ritmo. Cada objeto examina algo sobre Kael.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <span class="feature-icon">◉</span>
+        <h3>Stealth sem punição cruel</h3>
+        <p>Ser capturado te recua levemente — sem game over permanente. O foco é tensão e descoberta, não frustração.
+        </p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <span class="feature-icon">◆</span>
+        <h3>Diário interativo</h3>
+        <p>Se atualiza automaticamente com cada pista encontrada. Monte sua própria versão da história de Kael.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <span class="feature-icon">◇</span>
+        <h3>Dois finais</h3>
+        <p>"Acordar e lembrar" ou "Ficar e esquecer." A última porta exige uma decisão — não apenas uma chave.</p>
+      </div>
+      <div class="feature-card reveal">
+        <span class="feature-icon">▣</span>
+        <h3>Pixel art sombria</h3>
+        <p>Paleta restrita e retrô. Cada ala tem suas próprias 6–8 cores dominantes, sentidas instantaneamente.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <span class="feature-icon">♦</span>
+        <h3>Trilha minimalista</h3>
+        <p>Piano e sintetizadores graves. Sem música nas perseguições — só silêncio e efeitos que levantam os pelos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cinematic"
+    style="background: radial-gradient(ellipse 70% 60% at 80% 50%, rgba(139,26,26,0.25) 0%, transparent 60%), var(--black);">
+    <div class="cinematic-body right reveal">
+      <div class="section-label">Os dois finais</div>
+      <h2>O castelo guarda<br><em>a sua memória.</em><br>Você vai levá-la?</h2>
+      <p>
+        A Porta da Vigília só abre quando você decide o que fazer com aquela última <span class="zigzag">memória</span>.
+        Não existe resposta certa — apenas a sua.
+      </p>
+      <div>
+        <a class="btn-play" href="#jogar">DESCOBRIR O FIM</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Corredor dos Sonhos</h3>
+        <p>Um RPG indie de exploração, narrativa ambiental e terror leve. Feito com pixel art e muito silêncio.</p>
+      </div>
+      <nav class="footer-nav">
+        <span class="game-name"
+          style="font-family: 'Cinzel Decorative', serif; font-size: 1rem; letter-spacing: 0.15em; color: #c9922a; text-shadow: 0 0 20px #c9922a99;">CORREDOR
+          DOS SONHOS</span>
+        <a href="#historia">HISTÓRIA</a>
+        <a href="#alas">O CASTELO</a>
+        <a href="#destaques">DESTAQUES</a>
+        <a href="#jogar">JOGAR AGORA</a>
+      </nav>
+    </div>
+    <div class="footer-copy">
+      <p>© 2025 CORREDOR DOS SONHOS · TODOS OS DIREITOS RESERVADOS</p>
+      <p>FEITO COM RPG MAKER · PIXEL ART · MUITA NÉVOA</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+
+  <audio id="bg-music" src="music.mp3" autoplay loop hidden></audio>
+
+</body>
+
 </html>
