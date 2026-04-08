@@ -17,7 +17,44 @@
 
 <body>
 
+  <!-- ─── VERIFICAÇÃO DE IDADE ─────────────────────── -->
+  <div id="age-gate">
+    <div class="age-gate-content">
+      <p class="age-gate-label">VERIFICAÇÃO DE IDADE</p>
+      <h2 class="age-gate-title"><span class="zigzag">Corredor dos Sonhos</span></h2>
+      <p class="age-gate-desc">Este jogo contém temas de terror leve e conteúdo psicológico.<br>Insira sua data de nascimento para continuar.</p>
+
+      <div class="age-gate-inputs" id="age-inputs">
+        <div class="age-field">
+          <label for="age-day">DIA</label>
+          <input type="number" id="age-day" min="1" max="31" placeholder="DD" />
+        </div>
+        <div class="age-field">
+          <label for="age-month">MÊS</label>
+          <input type="number" id="age-month" min="1" max="12" placeholder="MM" />
+        </div>
+        <div class="age-field">
+          <label for="age-year">ANO</label>
+          <input type="number" id="age-year" min="1900" max="2026" placeholder="AAAA" />
+        </div>
+      </div>
+
+      <button class="age-gate-btn" id="age-submit">ENTRAR</button>
+      <p class="age-gate-error" id="age-error"></p>
+    </div>
+
+    <!-- Fallback: menor de idade -->
+    <div class="age-gate-blocked" id="age-blocked">
+      <p class="age-blocked-icon">🚫</p>
+      <h2 class="age-blocked-title">Acesso negado</h2>
+      <p class="age-blocked-msg">Você precisa ter pelo menos <strong>18 anos</strong> para acessar este conteúdo.</p>
+      <p class="age-blocked-sub">Volte quando for mais velho. O castelo não vai a lugar nenhum.</p>
+    </div>
+  </div>
+
   <div id="intro">
+    <div class="intro-stars"></div>
+    <img src="./moon.png" alt="Lua" class="intro-moon" id="intro-moon" />
     <p class="intro-line">você está dormindo...</p>
     <p class="intro-line amber">mas o castelo está acordado.</p>
     <p class="intro-line red">ele te conhece.</p>
@@ -39,8 +76,10 @@
 
       <ul class="nav-links" id="nav-links">
         <li><a href="#historia">História</a></li>
+        <li><a href="#persona">Persona</a></li>
         <li><a href="#alas">O Castelo</a></li>
         <li><a href="#destaques">Destaques</a></li>
+        <li><a href="#contato">Contato</a></li>
         <li class="nav-highlight"><a href="#jogar">Jogar Agora</a></li>
       </ul>
 
@@ -74,8 +113,8 @@
 
   <section id="historia" class="cinematic"
     style="background: radial-gradient(ellipse 80% 60% at 20% 50%, rgba(59,31,78,0.4) 0%, transparent 60%), var(--black);">
-    <div class="cinematic-body reveal">
-      <div class="section-label">A história</div>
+    <div class="cinematic-body reveal" style="text-align: center; margin: 0 auto;">
+      <div class="section-label" style="justify-content: center;">A história</div>
       <h2>Kael adormeceu com o celular na mão.<br><em>O castelo não o deixou acordar.</em></h2>
       <p>
         No centro de um castelo que parece <span class="zigzag">vivo</span>, cada corredor guarda uma <span
@@ -92,6 +131,50 @@
     </blockquote>
     <cite>— Mateus, 17 anos · jogador</cite>
   </div>
+
+  <div class="divider"></div>
+  <div class="section-rune">· ♱ ·</div>
+
+  <section id="persona" class="cinematic"
+    style="background: radial-gradient(ellipse 60% 80% at 75% 50%, rgba(201, 146, 42, 0.05) 0%, transparent 50%), var(--black);">
+    <div class="cinematic-body reveal" style="max-width: 1000px; text-align: left; margin: 0 auto; padding-top: 2rem;">
+      <div class="section-label" style="justify-content: flex-start;">A Persona</div>
+      <h2 style="font-size: 2.5rem; text-align: left; margin-bottom: 3rem;">Mateus, 17 anos.<br><em>O explorador do mistério.</em></h2>
+      
+      <div class="persona-layout" style="display: grid; gap: 4rem;">
+        <div class="persona-image-wrapper" style="text-align: center;">
+          <img src="persona/persona.png" alt="Retrato da Persona" style="max-width: 100%; border: 1px solid var(--border); border-radius: 4px; filter: grayscale(20%) contrast(1.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        </div>
+
+        <div class="persona-content">
+          <div class="persona-card" style="background: rgba(20,20,20,0.8); border: 1px solid var(--border); padding: 2rem; border-radius: 4px;">
+            <h3 style="font-family: 'Cinzel Decorative', serif; color: var(--amber); margin-bottom: 1rem; font-size: 1.5rem;">Resumo</h3>
+            <p style="font-size: 1rem; color: rgba(232,232,240,0.8); line-height: 1.6; margin-bottom: 2rem;">
+              Estuda no ensino médio e busca experiências narrativas imersivas e cheias de mistério. Prefere explorar mapas retrô (pixel art) no PC à noite, valorizando um clima de tensão leve sem mecânicas punitivas.
+            </p>
+            
+            <h3 style="font-family: 'Cinzel Decorative', serif; color: var(--amber); margin-bottom: 1rem; font-size: 1.5rem;">O que ele procura</h3>
+            <ul style="list-style: none; padding: 0; color: rgba(232,232,240,0.8); font-size: 0.95rem; margin-bottom: 2rem; line-height: 1.8;">
+              <li><span style="color:var(--amber); margin-right: 10px;">♦</span> Ser fisgado pela história logo no início</li>
+              <li><span style="color:var(--amber); margin-right: 10px;">♦</span> Explorar um ambiente com segredos escondidos</li>
+              <li><span style="color:var(--amber); margin-right: 10px;">♦</span> Entender objetivos sem frustração</li>
+              <li><span style="color:var(--amber); margin-right: 10px;">♦</span> Montar as peças da história (narrativa ambiental)</li>
+            </ul>
+
+            <h3 style="font-family: 'Cinzel Decorative', serif; color: #a12b2b; margin-bottom: 1rem; font-size: 1.5rem;">Fatores de Abandono (Dores)</h3>
+            <ul style="list-style: none; padding: 0; color: rgba(232,232,240,0.8); font-size: 0.95rem; line-height: 1.8;">
+              <li><span style="color:#a12b2b; margin-right: 10px;">×</span> Histórias extremamente arrastadas no início</li>
+              <li><span style="color:#a12b2b; margin-right: 10px;">×</span> Mapas confusos sem identidade visual própria</li>
+              <li><span style="color:#a12b2b; margin-right: 10px;">×</span> Punição excessiva e dificuldade injusta</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+  <div class="section-rune">· ✦ ·</div>
 
   <section id="jogar">
     <div class="play-header reveal">
@@ -234,6 +317,38 @@
     </div>
   </section>
 
+  <section id="contato" style="padding: 6rem 5%; background: #0a0a0a;">
+    <div class="play-header reveal">
+      <p class="section-label" style="justify-content:center;">Contato</p>
+      <h2>Deixe seu Eco no castelo</h2>
+      <p>Envie uma mensagem aos arquitetos do Corredor dos Sonhos.</p>
+    </div>
+    
+    <div class="form-wrapper reveal reveal-delay-1" style="max-width: 600px; margin: 0 auto; margin-top: 3rem;">
+      <form class="contact-form" action="#" method="POST">
+        <div class="form-group">
+          <label for="nome">Nome Verdadeiro</label>
+          <input type="text" id="nome" name="nome" placeholder="Como devemos chamá-lo..." required>
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail de Contato</label>
+          <input type="email" id="email" name="email" placeholder="seu-email@dominio.com" required>
+        </div>
+        <div class="form-group">
+          <label for="telefone">Telefone (Opcional)</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999">
+        </div>
+        <div class="form-group">
+          <label for="mensagem">Mensagem / Eco</label>
+          <textarea id="mensagem" name="mensagem" rows="5" placeholder="Descreva os segredos que decifrou no mapa..." required></textarea>
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+          <button type="submit" class="btn-submit">ENVIAR ECO</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
@@ -245,13 +360,16 @@
           style="font-family: 'Cinzel Decorative', serif; font-size: 1rem; letter-spacing: 0.15em; color: #c9922a; text-shadow: 0 0 20px #c9922a99;">CORREDOR
           DOS SONHOS</span>
         <a href="#historia">HISTÓRIA</a>
+        <a href="#persona">PERSONA</a>
         <a href="#alas">O CASTELO</a>
         <a href="#destaques">DESTAQUES</a>
+        <a href="#contato">CONTATO</a>
         <a href="#jogar">JOGAR AGORA</a>
       </nav>
     </div>
     <div class="footer-copy">
       <p>© 2025 CORREDOR DOS SONHOS · TODOS OS DIREITOS RESERVADOS</p>
+      <a href="https://linkedin.com/" target="_blank" style="font-family: 'Press Start 2P', monospace; font-size: 0.4rem; color: var(--amber); letter-spacing: 0.08em; text-decoration: none; opacity: 0.7; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">MEU LINKEDIN</a>
       <p>FEITO COM RPG MAKER · PIXEL ART · MUITA NÉVOA</p>
     </div>
   </footer>
