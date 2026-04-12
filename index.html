@@ -78,7 +78,7 @@
         <li><a href="#alas">O Mundo</a></li>
         <li><a href="#destaques">Destaques</a></li>
         <li><a href="#contato">Contato</a></li>
-        <li class="nav-highlight"><a href="#jogar">Jogar Agora</a></li>
+        <li class="nav-highlight"><a href="jogar.html">Jogar Agora</a></li>
         <li>
           <button class="theme-toggle" id="theme-toggle" title="Alternar tema" aria-label="Alternar tema claro/escuro">☀️</button>
         </li>
@@ -96,7 +96,7 @@
       <h1 class="hero-title">Corredor<br><span>dos Sonhos</span></h1>
       <p class="hero-tagline">"Você <span class="zigzag">adormeceu</span>. O castelo <span class="zigzag">acordou</span> antes de você."</p>
       <div class="hero-buttons">
-        <a class="btn-play" href="#jogar">▶ ENTRAR NO CASTELO</a>
+        <a class="btn-play" href="jogar.html">▶ ENTRAR NO CASTELO</a>
         <a class="btn-outline" href="#historia">DESCOBRIR A HISTÓRIA</a>
       </div>
     </div>
@@ -172,7 +172,9 @@
       <h2>Entre no corredor</h2>
       <p>O castelo está esperando. Você não precisa de instalação — só de <span class="zigzag">coragem</span>.</p>
     </div>
-    <div class="iframe-wrapper reveal reveal-delay-1">
+
+    <!-- IFRAME DO JOGO -->
+    <div class="iframe-wrapper reveal" style="margin-top: 3rem; margin-bottom: 3rem;">
       <div class="iframe-topbar">
         <div class="iframe-dot red"></div>
         <div class="iframe-dot amber"></div>
@@ -180,7 +182,7 @@
         <div class="iframe-url">corredor-dos-sonhos.itch.io</div>
       </div>
       <iframe class="game-iframe" id="game-iframe" src="about:blank"
-        data-src="https://itch.io/embed-upload/SEU-JOGO-AQUI?color=0d0d0d"
+        data-src="./corredor_dos_sonhos/index.html"
         allowfullscreen title="Corredor dos Sonhos — Jogar no navegador"></iframe>
       <div class="iframe-overlay" id="iframe-overlay">
         <div class="play-icon" id="play-btn">
@@ -188,6 +190,10 @@
         </div>
         <p class="play-label">INICIAR O JOGO</p>
       </div>
+    </div>
+
+    <div style="text-align: center;" class="reveal reveal-delay-1">
+      <a class="btn-play" href="jogar.html" style="display: inline-flex;">▶ JOGAR EM TELA CHEIA</a>
     </div>
   </section>
 
@@ -284,7 +290,7 @@
       <div class="section-label">Os dois finais</div>
       <h2>O castelo guarda<br><em>a sua memória.</em><br>Você vai levá-la?</h2>
       <p>A Porta da Vigília só abre quando você decide o que fazer com aquela última <span class="zigzag">memória</span>. Não existe resposta certa — apenas a sua.</p>
-      <div><a class="btn-play" href="#jogar">DESCOBRIR O FIM</a></div>
+      <div><a class="btn-play" href="jogar.html">DESCOBRIR O FIM</a></div>
     </div>
   </section>
 
@@ -327,16 +333,6 @@
         <h3>Corredor dos Sonhos</h3>
         <p>Um RPG indie de exploração, narrativa ambiental e terror leve. Feito com pixel art e muito silêncio.</p>
       </div>
-      <nav class="footer-nav">
-        <span class="footer-game-name">CORREDOR DOS SONHOS</span>
-        <a href="#historia">HISTÓRIA</a>
-        <a href="#persona">PERSONA</a>
-        <a href="#alas">O MUNDO</a>
-        <a href="#destaques">DESTAQUES</a>
-        <a href="#contato">CONTATO</a>
-        <a href="#jogar">JOGAR AGORA</a>
-        <button class="theme-toggle" id="theme-toggle" title="Alternar tema" aria-label="Alternar tema claro/escuro">☀️</button>
-      </nav>
     </div>
     <div class="footer-copy">
       <p>© 2025 CORREDOR DOS SONHOS · TODOS OS DIREITOS RESERVADOS</p>

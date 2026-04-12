@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corredor dos Sonhos - Jogar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <style>
+    body { 
+      display: flex; 
+      flex-direction: column; 
+      min-height: 100vh; 
+      margin: 0; 
+      background: var(--bg); 
+    }
+    .game-page-wrapper { 
+      flex: 1; 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      justify-content: center; 
+      padding: 100px 5% 50px; 
+    }
+    .back-btn { 
+      margin-bottom: 2rem; 
+      color: var(--amber); 
+      text-decoration: none; 
+      font-family: 'Press Start 2P', monospace; 
+      font-size: 0.6rem; 
+      align-self: flex-start;
+      border: 1px solid rgba(201,146,42,0.3);
+      padding: 10px 16px;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+    .back-btn:hover { 
+      background: rgba(201,146,42,0.1);
+      border-color: var(--amber);
+    }
+    .iframe-wrapper { width: 100%; max-width: 1200px; height: 75vh; }
+    .game-iframe { height: 100%; }
+    @media (max-width: 768px) {
+      .iframe-wrapper { height: 60vh; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">CORREDOR DOS SONHOS</a>
+      <ul class="nav-links" id="nav-links" style="display: none;"></ul>
+    </div>
+  </nav>
+
+  <div class="game-page-wrapper">
+    <a href="index.html" class="back-btn">◄ VOLTAR AO SITE</a>
+    
+    <!-- IFRAME DO JOGO -->
+    <div class="iframe-wrapper reveal">
+      <div class="iframe-topbar">
+        <div class="iframe-dot red"></div>
+        <div class="iframe-dot amber"></div>
+        <div class="iframe-dot green"></div>
+        <div class="iframe-url">corredor-dos-sonhos.itch.io</div>
+      </div>
+      <iframe class="game-iframe" id="game-iframe" src="about:blank"
+        data-src="./corredor_dos_sonhos/index.html"
+        allowfullscreen title="Corredor dos Sonhos — Jogar no navegador"></iframe>
+      <div class="iframe-overlay" id="iframe-overlay">
+        <div class="play-icon" id="play-btn">
+          <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" /></svg>
+        </div>
+        <p class="play-label">INICIAR O JOGO</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js" defer></script>
+  <audio id="bg-music" src="./music.mp3" loop hidden></audio>
+
+</body>
+</html>

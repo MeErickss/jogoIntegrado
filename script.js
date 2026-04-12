@@ -2,7 +2,7 @@
    CORREDOR DOS SONHOS — script.js
    ═══════════════════════════════════════════════════ */
 
-const GAME_LAUNCH_YEAR = 2025;
+const GAME_LAUNCH_YEAR = 2026;
 
 /* ══════════════════════════════════════════════════
    TEMA
@@ -44,6 +44,7 @@ function checkLaunchYear() {
 
 function showLaunchAlert() {
   document.getElementById('launch-alert')?.classList.add('visible');
+  window.alert('GRANDE LANÇAMENTO: O Corredor dos Sonhos já abriu suas portas e está disponível para jogar!');
 }
 
 /* ══════════════════════════════════════════════════
@@ -226,6 +227,25 @@ function initIframe() {
     const src = iframe.getAttribute('data-src');
     if (src && src !== 'about:blank') iframe.src = src;
     overlay.classList.add('hidden');
+    
+    // Silencia a música de fundo ao iniciar o jogo
+    const music = document.getElementById('bg-music');
+    if (music) {
+      music.pause();
+    }
+  });
+
+  // Previne que setas e o botão espaço rolem a tela principal quando o jogo estiver focado
+  iframe.addEventListener('load', () => {
+    try {
+      iframe.contentWindow.addEventListener('keydown', (e) => {
+        if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", " "].includes(e.key)) {
+          e.preventDefault();
+        }
+      }, { capture: true, passive: false });
+    } catch (err) {
+      // Falha silenciosa no initial load ou problema de CORS em testes locais.
+    }
   });
 }
 

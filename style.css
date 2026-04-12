@@ -893,6 +893,7 @@ footer { padding:5rem 5% 3rem; background:var(--bg-footer); border-top:1px solid
   .nav-links.active { transform:translateY(0); }
   .persona-layout { grid-template-columns:1fr; gap:2rem; }
   .alas-grid { grid-template-columns:1fr; }
+  .ala-card { min-height: 280px; padding: 1.5rem 1.5rem; }
   .ala-card:last-child:nth-child(odd) { grid-column:auto; max-width:100%; }
   .footer-inner { grid-template-columns:1fr; }
   .footer-nav { justify-content:flex-start; }
@@ -902,6 +903,9 @@ footer { padding:5rem 5% 3rem; background:var(--bg-footer); border-top:1px solid
 @media (max-width:480px) {
   .launch-alert-inner { padding:2.5rem 1.5rem; }
   .footer-copy { flex-direction:column; align-items:flex-start; }
+  .age-gate-content { padding: 2rem 1rem; }
+  .age-field input { width: 70px; padding: 12px 6px; }
+  .age-gate-inputs { gap: 0.5rem; }
 }
 
 .ala-card {
