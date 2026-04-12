@@ -644,6 +644,7 @@ nav {
   position:relative; overflow:hidden; min-height:420px;
   display:flex; flex-direction:column; justify-content:flex-end;
   padding:2.5rem 2rem; cursor:default;
+  background-color: #0a0a0c;
 }
 .ala-bg { position:absolute; inset:0; transition:transform 0.6s ease, filter 0.6s ease; }
 .ala-card:hover .ala-bg { transform:scale(1.06); filter:brightness(0.5); }
@@ -924,7 +925,7 @@ footer { padding:5rem 5% 3rem; background:var(--bg-footer); border-top:1px solid
 
 /* IMAGENS DE CADA ÁREA */
 .ala-1 .ala-bg {
-  background-image: url('./castelo.png');
+  background-image: url('./Castelo.png');
 }
 
 .ala-2 .ala-bg {
