@@ -1,29 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-BR" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Corredor dos Sonhos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Press+Start+2P&display=swap"
-    rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Press+Start+2P&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./style.css" />
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
 </head>
-
 <body>
 
-  <!-- ─── VERIFICAÇÃO DE IDADE ─────────────────────── -->
+  <!-- ─── ALERTA DE GRANDE LANÇAMENTO ─── -->
+  <div id="launch-alert" class="launch-alert">
+    <div class="launch-alert-inner">
+      <p class="launch-alert-label">✦ GRANDE LANÇAMENTO ✦</p>
+      <h2 class="launch-alert-title">O Castelo Abriu Suas Portas</h2>
+      <p class="launch-alert-desc">Corredor dos Sonhos está disponível agora. O pesadelo começa hoje.</p>
+      <button class="launch-alert-close" id="launch-alert-close">ENTRAR NO CASTELO</button>
+    </div>
+  </div>
+
+  <!-- ─── VERIFICAÇÃO DE IDADE ─── -->
   <div id="age-gate">
     <div class="age-gate-content">
       <p class="age-gate-label">VERIFICAÇÃO DE IDADE</p>
       <h2 class="age-gate-title"><span class="zigzag">Corredor dos Sonhos</span></h2>
       <p class="age-gate-desc">Este jogo contém temas de terror leve e conteúdo psicológico.<br>Insira sua data de nascimento para continuar.</p>
-
       <div class="age-gate-inputs" id="age-inputs">
         <div class="age-field">
           <label for="age-day">DIA</label>
@@ -38,12 +42,9 @@
           <input type="number" id="age-year" min="1900" max="2026" placeholder="AAAA" />
         </div>
       </div>
-
       <button class="age-gate-btn" id="age-submit">ENTRAR</button>
       <p class="age-gate-error" id="age-error"></p>
     </div>
-
-    <!-- Fallback: menor de idade -->
     <div class="age-gate-blocked" id="age-blocked">
       <p class="age-blocked-icon">🚫</p>
       <h2 class="age-blocked-title">Acesso negado</h2>
@@ -52,6 +53,7 @@
     </div>
   </div>
 
+  <!-- ─── INTRO OVERLAY ─── -->
   <div id="intro">
     <div class="intro-stars"></div>
     <img src="./moon.png" alt="Lua" class="intro-moon" id="intro-moon" />
@@ -63,45 +65,41 @@
     <button class="intro-skip" id="skip-btn">PULAR ▶</button>
   </div>
 
+  <!-- ─── NAV ─── -->
   <nav>
     <div class="nav-container">
-
       <a href="#" class="nav-logo">CORREDOR DOS SONHOS</a>
-
       <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </div>
-
       <ul class="nav-links" id="nav-links">
         <li><a href="#historia">História</a></li>
         <li><a href="#persona">Persona</a></li>
-        <li><a href="#alas">O Castelo</a></li>
+        <li><a href="#alas">O Mundo</a></li>
         <li><a href="#destaques">Destaques</a></li>
         <li><a href="#contato">Contato</a></li>
         <li class="nav-highlight"><a href="#jogar">Jogar Agora</a></li>
+        <li>
+          <button class="theme-toggle" id="theme-toggle" title="Alternar tema" aria-label="Alternar tema claro/escuro">☀️</button>
+        </li>
       </ul>
-
     </div>
   </nav>
 
+  <!-- ─── HERO ─── -->
   <section class="hero">
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
-
     <div class="hero-content">
       <p class="hero-eyebrow">RPG indie · pixel art · terror leve</p>
       <h1 class="hero-title">Corredor<br><span>dos Sonhos</span></h1>
-      <p class="hero-tagline">"Você <span class="zigzag">adormeceu</span>. O castelo <span class="zigzag">acordou</span>
-        antes de você."</p>
+      <p class="hero-tagline">"Você <span class="zigzag">adormeceu</span>. O castelo <span class="zigzag">acordou</span> antes de você."</p>
       <div class="hero-buttons">
         <a class="btn-play" href="#jogar">▶ ENTRAR NO CASTELO</a>
         <a class="btn-outline" href="#historia">DESCOBRIR A HISTÓRIA</a>
       </div>
     </div>
-
     <div class="hero-scroll">
       <span>DESCER</span>
       <div class="scroll-line"></div>
@@ -111,14 +109,13 @@
   <div class="divider"></div>
   <div class="section-rune">· · ✦ · ·</div>
 
-  <section id="historia" class="cinematic"
-    style="background: radial-gradient(ellipse 80% 60% at 20% 50%, rgba(59,31,78,0.4) 0%, transparent 60%), var(--black);">
-    <div class="cinematic-body reveal" style="text-align: center; margin: 0 auto;">
-      <div class="section-label" style="justify-content: center;">A história</div>
+  <!-- ─── HISTÓRIA ─── -->
+  <section id="historia" class="cinematic">
+    <div class="cinematic-body reveal" style="text-align:center; margin:0 auto;">
+      <div class="section-label" style="justify-content:center;">A história</div>
       <h2>Kael adormeceu com o celular na mão.<br><em>O castelo não o deixou acordar.</em></h2>
       <p>
-        No centro de um castelo que parece <span class="zigzag">vivo</span>, cada corredor guarda uma <span
-          class="zigzag">memória</span> que ele preferiu esquecer.
+        No centro de um mundo que parece <span class="zigzag">vivo</span>, cada área guarda uma <span class="zigzag">memória</span> que ele preferiu esquecer.
         As criaturas não são monstros — são fragmentos de algo mais antigo e mais <span class="zigzag">pessoal</span>.
         Para encontrar a saída, você precisará primeiro entender por que chegou aqui.
       </p>
@@ -126,46 +123,38 @@
   </section>
 
   <div class="quote-section">
-    <blockquote>
-      "Quero sentir que entrei em um lugar estranho e que preciso descobrir o que aconteceu ali."
-    </blockquote>
+    <blockquote>"Quero sentir que entrei em um lugar estranho e que preciso descobrir o que aconteceu ali."</blockquote>
     <cite>— Mateus, 17 anos · jogador</cite>
   </div>
 
   <div class="divider"></div>
   <div class="section-rune">· ♱ ·</div>
 
-  <section id="persona" class="cinematic"
-    style="background: radial-gradient(ellipse 60% 80% at 75% 50%, rgba(201, 146, 42, 0.05) 0%, transparent 50%), var(--black);">
-    <div class="cinematic-body reveal" style="max-width: 1000px; text-align: left; margin: 0 auto; padding-top: 2rem;">
-      <div class="section-label" style="justify-content: flex-start;">A Persona</div>
-      <h2 style="font-size: 2.5rem; text-align: left; margin-bottom: 3rem;">Mateus, 17 anos.<br><em>O explorador do mistério.</em></h2>
-      
-      <div class="persona-layout" style="display: grid; gap: 4rem;">
-        <div class="persona-image-wrapper" style="text-align: center;">
-          <img src="persona/persona.png" alt="Retrato da Persona" style="max-width: 100%; border: 1px solid var(--border); border-radius: 4px; filter: grayscale(20%) contrast(1.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+  <!-- ─── PERSONA ─── -->
+  <section id="persona" class="cinematic">
+    <div class="cinematic-body reveal" style="max-width:1000px; text-align:left; margin:0 auto; padding-top:2rem;">
+      <div class="section-label" style="justify-content:flex-start;">A Persona</div>
+      <h2 style="font-size:2.5rem; text-align:left; margin-bottom:3rem;">Mateus, 17 anos.<br><em>O explorador do mistério.</em></h2>
+      <div class="persona-layout">
+        <div class="persona-image-wrapper">
+          <img src="persona/persona.png" alt="Retrato da Persona" class="persona-img">
         </div>
-
         <div class="persona-content">
-          <div class="persona-card" style="background: rgba(20,20,20,0.8); border: 1px solid var(--border); padding: 2rem; border-radius: 4px;">
-            <h3 style="font-family: 'Cinzel Decorative', serif; color: var(--amber); margin-bottom: 1rem; font-size: 1.5rem;">Resumo</h3>
-            <p style="font-size: 1rem; color: rgba(232,232,240,0.8); line-height: 1.6; margin-bottom: 2rem;">
-              Estuda no ensino médio e busca experiências narrativas imersivas e cheias de mistério. Prefere explorar mapas retrô (pixel art) no PC à noite, valorizando um clima de tensão leve sem mecânicas punitivas.
-            </p>
-            
-            <h3 style="font-family: 'Cinzel Decorative', serif; color: var(--amber); margin-bottom: 1rem; font-size: 1.5rem;">O que ele procura</h3>
-            <ul style="list-style: none; padding: 0; color: rgba(232,232,240,0.8); font-size: 0.95rem; margin-bottom: 2rem; line-height: 1.8;">
-              <li><span style="color:var(--amber); margin-right: 10px;">♦</span> Ser fisgado pela história logo no início</li>
-              <li><span style="color:var(--amber); margin-right: 10px;">♦</span> Explorar um ambiente com segredos escondidos</li>
-              <li><span style="color:var(--amber); margin-right: 10px;">♦</span> Entender objetivos sem frustração</li>
-              <li><span style="color:var(--amber); margin-right: 10px;">♦</span> Montar as peças da história (narrativa ambiental)</li>
+          <div class="persona-card">
+            <h3 class="persona-card-title amber">Resumo</h3>
+            <p class="persona-card-text">Estuda no ensino médio e busca experiências narrativas imersivas e cheias de mistério. Prefere explorar mapas retrô (pixel art) no PC à noite, valorizando um clima de tensão leve sem mecânicas punitivas.</p>
+            <h3 class="persona-card-title amber">O que ele procura</h3>
+            <ul class="persona-list">
+              <li><span class="persona-bullet amber">♦</span> Ser fisgado pela história logo no início</li>
+              <li><span class="persona-bullet amber">♦</span> Explorar um ambiente com segredos escondidos</li>
+              <li><span class="persona-bullet amber">♦</span> Entender objetivos sem frustração</li>
+              <li><span class="persona-bullet amber">♦</span> Montar as peças da história (narrativa ambiental)</li>
             </ul>
-
-            <h3 style="font-family: 'Cinzel Decorative', serif; color: #a12b2b; margin-bottom: 1rem; font-size: 1.5rem;">Fatores de Abandono (Dores)</h3>
-            <ul style="list-style: none; padding: 0; color: rgba(232,232,240,0.8); font-size: 0.95rem; line-height: 1.8;">
-              <li><span style="color:#a12b2b; margin-right: 10px;">×</span> Histórias extremamente arrastadas no início</li>
-              <li><span style="color:#a12b2b; margin-right: 10px;">×</span> Mapas confusos sem identidade visual própria</li>
-              <li><span style="color:#a12b2b; margin-right: 10px;">×</span> Punição excessiva e dificuldade injusta</li>
+            <h3 class="persona-card-title red">Fatores de Abandono (Dores)</h3>
+            <ul class="persona-list">
+              <li><span class="persona-bullet red">×</span> Histórias extremamente arrastadas no início</li>
+              <li><span class="persona-bullet red">×</span> Mapas confusos sem identidade visual própria</li>
+              <li><span class="persona-bullet red">×</span> Punição excessiva e dificuldade injusta</li>
             </ul>
           </div>
         </div>
@@ -176,13 +165,13 @@
   <div class="divider"></div>
   <div class="section-rune">· ✦ ·</div>
 
+  <!-- ─── JOGAR ─── -->
   <section id="jogar">
     <div class="play-header reveal">
       <p class="section-label" style="justify-content:center;">Jogar agora</p>
       <h2>Entre no corredor</h2>
       <p>O castelo está esperando. Você não precisa de instalação — só de <span class="zigzag">coragem</span>.</p>
     </div>
-
     <div class="iframe-wrapper reveal reveal-delay-1">
       <div class="iframe-topbar">
         <div class="iframe-dot red"></div>
@@ -190,94 +179,81 @@
         <div class="iframe-dot green"></div>
         <div class="iframe-url">corredor-dos-sonhos.itch.io</div>
       </div>
-
       <iframe class="game-iframe" id="game-iframe" src="about:blank"
-        data-src="https://itch.io/embed-upload/SEU-JOGO-AQUI?color=0d0d0d" allowfullscreen
-        title="Corredor dos Sonhos — Jogar no navegador"></iframe>
-
+        data-src="https://itch.io/embed-upload/SEU-JOGO-AQUI?color=0d0d0d"
+        allowfullscreen title="Corredor dos Sonhos — Jogar no navegador"></iframe>
       <div class="iframe-overlay" id="iframe-overlay">
         <div class="play-icon" id="play-btn">
-          <svg viewBox="0 0 24 24">
-            <polygon points="5,3 19,12 5,21" />
-          </svg>
+          <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" /></svg>
         </div>
         <p class="play-label">INICIAR O JOGO</p>
       </div>
     </div>
-
   </section>
 
+  <!-- ─── ÁREAS DO MUNDO ─── -->
   <section id="alas">
     <div class="section-header reveal">
-      <p class="section-label" style="justify-content:center; margin-bottom:1rem;">O castelo</p>
-      <h2>Quatro alas. Quatro medos.<br>Nenhuma saída fácil.</h2>
-      <p>Cada ala é um fragmento do subconsciente de Kael — com sua própria atmosfera, criatura e segredo.</p>
+      <p class="section-label" style="justify-content:center; margin-bottom:1rem;">O mundo</p>
+      <h2>Quatro mundos. Quatro medos.<br>Nenhuma saída fácil.</h2>
+      <p>Cada área é um fragmento do pesadelo de Kael — com sua própria atmosfera, criatura e segredo enterrado nas sombras.</p>
     </div>
-
     <div class="alas-grid">
       <div class="ala-card ala-1 reveal">
         <div class="ala-bg"></div>
         <div class="ala-content">
-          <p class="ala-num">ALA 01 ·</p>
-          <h3>Ala das Velas</h3>
-          <p class="ala-theme">Memória da infância · Paleta âmbar e quente</p>
-          <p>Nostálgica e perturbadora. A <span class="zigzag">Sombra</span> que vive aqui imita a silhueta de Kael com
-            precisão assustadora.</p>
+          <p class="ala-num">ÁREA 01 ·</p>
+          <h3>O Castelo</h3>
+          <p class="ala-theme">Pedra e penumbra · Paleta cinza e roxo profundo</p>
+          <p>Corredores de pedra que ecoam seus passos. A <span class="zigzag">Sombra</span> que patrulha aqui conhece cada segredo escondido nas paredes — e ela já te viu antes de você entrar.</p>
         </div>
       </div>
-
       <div class="ala-card ala-2 reveal reveal-delay-1">
         <div class="ala-bg"></div>
         <div class="ala-content">
-          <p class="ala-num">ALA 02 ·</p>
-          <h3>Ala Alagada</h3>
-          <p class="ala-theme">Ansiedade e pressão · Azul escuro e ecos</p>
-          <p>Água no chão. Ecos distantes. A criatura aqui persegue pelo <span class="zigzag">som</span> — cada passo
-            conta.</p>
+          <p class="ala-num">ÁREA 02 ·</p>
+          <h3>O Deserto</h3>
+          <p class="ala-theme">Areia e silêncio abrasador · Paleta âmbar e ocre</p>
+          <p>O calor distorce o horizonte. A criatura aqui não persegue — ela <span class="zigzag">espera</span>, enterrada sob a areia, sentindo cada vibração do solo sob seus pés.</p>
         </div>
       </div>
-
       <div class="ala-card ala-3 reveal reveal-delay-2">
         <div class="ala-bg"></div>
         <div class="ala-content">
-          <p class="ala-num">ALA 03 ·</p>
-          <h3>Ala da Biblioteca</h3>
-          <p class="ala-theme">Segredos enterrados · Verde acinzentado e névoa</p>
-          <p>Livros espalhados. A Figura que patrulha é sensível à <span class="zigzag">luz</span> — apague as velas
-            antes de avançar.</p>
+          <p class="ala-num">ÁREA 03 ·</p>
+          <h3>A Floresta</h3>
+          <p class="ala-theme">Verde sombrio e névoa espessa · Paleta esmeralda e trevas</p>
+          <p>As árvores bloqueiam a luz e conhecem seu nome. A Figura que vive aqui se move entre galhos sem tocar o <span class="zigzag">chão</span> — e te viu antes de você perceber.</p>
         </div>
       </div>
-
       <div class="ala-card ala-4 reveal reveal-delay-3">
         <div class="ala-bg"></div>
         <div class="ala-content">
-          <p class="ala-num">ALA 04 ·</p>
-          <h3>Torre do Eco</h3>
-          <p class="ala-theme">Núcleo do pesadelo · Vermelho escuro e silêncio</p>
-          <p>O <span class="zigzag">Reflexo</span> espera aqui. É uma cópia distorcida de Kael — e ele sabe de coisas
-            que você preferiu esquecer.</p>
+          <p class="ala-num">ÁREA 04 ·</p>
+          <h3>A Caverna</h3>
+          <p class="ala-theme">Rocha e trevas profundas · Paleta azul escuro e cinza frio</p>
+          <p>O <span class="zigzag">Eco</span> ressoa antes dos seus passos. O que vive nessas profundezas não precisa enxergar para te encontrar — ele sente a vibração de tudo.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ─── DESTAQUES ─── -->
   <section id="destaques">
     <div class="section-header reveal">
       <p class="section-label" style="justify-content:center; margin-bottom:1rem;">Por que jogar</p>
       <h2>Feito para quem explora cada canto</h2>
     </div>
-
     <div class="features-grid">
       <div class="feature-card reveal">
         <span class="feature-icon">◈</span>
         <h3>Narrativa ambiental</h3>
-        <p>Bilhetes, pinturas e sussurros contam a história sem cortar o ritmo. Cada objeto examina algo sobre Kael.</p>
+        <p>Bilhetes, pinturas e sussurros contam a história sem cortar o ritmo. Cada objeto revela algo sobre Kael.</p>
       </div>
       <div class="feature-card reveal reveal-delay-1">
         <span class="feature-icon">◉</span>
         <h3>Stealth sem punição cruel</h3>
-        <p>Ser capturado te recua levemente — sem game over permanente. O foco é tensão e descoberta, não frustração.
-        </p>
+        <p>Ser capturado te recua levemente — sem game over permanente. O foco é tensão e descoberta, não frustração.</p>
       </div>
       <div class="feature-card reveal reveal-delay-2">
         <span class="feature-icon">◆</span>
@@ -292,7 +268,7 @@
       <div class="feature-card reveal">
         <span class="feature-icon">▣</span>
         <h3>Pixel art sombria</h3>
-        <p>Paleta restrita e retrô. Cada ala tem suas próprias 6–8 cores dominantes, sentidas instantaneamente.</p>
+        <p>Paleta restrita e retrô. Cada área tem suas próprias 6–8 cores dominantes, sentidas instantaneamente.</p>
       </div>
       <div class="feature-card reveal reveal-delay-1">
         <span class="feature-icon">♦</span>
@@ -302,30 +278,25 @@
     </div>
   </section>
 
-  <section class="cinematic"
-    style="background: radial-gradient(ellipse 70% 60% at 80% 50%, rgba(139,26,26,0.25) 0%, transparent 60%), var(--black);">
+  <!-- ─── CTA DOS FINAIS ─── -->
+  <section class="cinematic cinematic-cta">
     <div class="cinematic-body right reveal">
       <div class="section-label">Os dois finais</div>
       <h2>O castelo guarda<br><em>a sua memória.</em><br>Você vai levá-la?</h2>
-      <p>
-        A Porta da Vigília só abre quando você decide o que fazer com aquela última <span class="zigzag">memória</span>.
-        Não existe resposta certa — apenas a sua.
-      </p>
-      <div>
-        <a class="btn-play" href="#jogar">DESCOBRIR O FIM</a>
-      </div>
+      <p>A Porta da Vigília só abre quando você decide o que fazer com aquela última <span class="zigzag">memória</span>. Não existe resposta certa — apenas a sua.</p>
+      <div><a class="btn-play" href="#jogar">DESCOBRIR O FIM</a></div>
     </div>
   </section>
 
-  <section id="contato" style="padding: 6rem 5%; background: #0a0a0a;">
+  <!-- ─── CONTATO ─── -->
+  <section id="contato">
     <div class="play-header reveal">
       <p class="section-label" style="justify-content:center;">Contato</p>
       <h2>Deixe seu Eco no castelo</h2>
       <p>Envie uma mensagem aos arquitetos do Corredor dos Sonhos.</p>
     </div>
-    
-    <div class="form-wrapper reveal reveal-delay-1" style="max-width: 600px; margin: 0 auto; margin-top: 3rem;">
-      <form class="contact-form" action="#" method="POST">
+    <div class="form-wrapper reveal reveal-delay-1">
+      <form id="contact-form" class="contact-form" action="#" method="POST">
         <div class="form-group">
           <label for="nome">Nome Verdadeiro</label>
           <input type="text" id="nome" name="nome" placeholder="Como devemos chamá-lo..." required>
@@ -342,13 +313,14 @@
           <label for="mensagem">Mensagem / Eco</label>
           <textarea id="mensagem" name="mensagem" rows="5" placeholder="Descreva os segredos que decifrou no mapa..." required></textarea>
         </div>
-        <div style="text-align: center; margin-top: 2rem;">
+        <div style="text-align:center; margin-top:2rem;">
           <button type="submit" class="btn-submit">ENVIAR ECO</button>
         </div>
       </form>
     </div>
   </section>
 
+  <!-- ─── FOOTER ─── -->
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
@@ -356,27 +328,28 @@
         <p>Um RPG indie de exploração, narrativa ambiental e terror leve. Feito com pixel art e muito silêncio.</p>
       </div>
       <nav class="footer-nav">
-        <span class="game-name"
-          style="font-family: 'Cinzel Decorative', serif; font-size: 1rem; letter-spacing: 0.15em; color: #c9922a; text-shadow: 0 0 20px #c9922a99;">CORREDOR
-          DOS SONHOS</span>
+        <span class="footer-game-name">CORREDOR DOS SONHOS</span>
         <a href="#historia">HISTÓRIA</a>
         <a href="#persona">PERSONA</a>
-        <a href="#alas">O CASTELO</a>
+        <a href="#alas">O MUNDO</a>
         <a href="#destaques">DESTAQUES</a>
         <a href="#contato">CONTATO</a>
         <a href="#jogar">JOGAR AGORA</a>
+        <button class="theme-toggle" id="theme-toggle" title="Alternar tema" aria-label="Alternar tema claro/escuro">☀️</button>
       </nav>
     </div>
     <div class="footer-copy">
       <p>© 2025 CORREDOR DOS SONHOS · TODOS OS DIREITOS RESERVADOS</p>
-      <a href="https://linkedin.com/" target="_blank" style="font-family: 'Press Start 2P', monospace; font-size: 0.4rem; color: var(--amber); letter-spacing: 0.08em; text-decoration: none; opacity: 0.7; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">MEU LINKEDIN</a>
+      <div class="footer-actions">
+        <a href="https://linkedin.com/" target="_blank" class="footer-link">MEU LINKEDIN</a>
+        <button id="footer-redefine-btn" class="footer-redefine-btn">REDEFINIR IDADE</button>
+      </div>
       <p>FEITO COM RPG MAKER · PIXEL ART · MUITA NÉVOA</p>
     </div>
   </footer>
 
   <script src="./script.js" defer></script>
-  <audio id="bg-music" src="./music.mp3" autoplay loop hidden></audio>
+  <audio id="bg-music" src="./music.mp3" loop hidden></audio>
 
 </body>
-
 </html>
